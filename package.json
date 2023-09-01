@@ -1,0 +1,28 @@
+{
+  "name": "util-library",
+  "version": "1.0.1",
+  "description": "utilities for developing node js applications",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha './src/**/*.test.js' --timeout 5000 --exit",
+    "test:single": "mocha --timeout 5000 --exit",
+    "test:coverage": "nyc mocha './src/**/*.test.js' --timeout 60000 --exit",
+    "lint": "eslint .",
+    "fix": "yarn run lint --fix",
+    "bump": "bump --tag --commit && git push && git push --tags"
+  },
+  "author": "Aaron Kauffman",
+  "license": "MIT",
+  "dependencies": {
+    "pino": "^8.8.0",
+    "pino-pretty": "^9.1.1"
+  },
+  "devDependencies": {
+    "@sparrow/dev": "github:https://github.com/sparrow-sw/dev-library.git",
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "nyc": "^15.1.0",
+    "version-bump-prompt": "^6.1.0"
+  }
+}
